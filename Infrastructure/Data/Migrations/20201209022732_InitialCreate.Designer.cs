@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructure.Data.Migrations
 {
     [DbContext(typeof(StoreContext))]
-    [Migration("20201208031924_InitialCreate")]
+    [Migration("20201209022732_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -19,7 +19,7 @@ namespace Infrastructure.Data.Migrations
 
             modelBuilder.Entity("Core.Entities.Product", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
@@ -46,7 +46,7 @@ namespace Infrastructure.Data.Migrations
                     b.Property<int>("ProductTypeId")
                         .HasColumnType("INTEGER");
 
-                    b.HasKey("ID");
+                    b.HasKey("Id");
 
                     b.HasIndex("ProductBrandId");
 
@@ -57,28 +57,28 @@ namespace Infrastructure.Data.Migrations
 
             modelBuilder.Entity("Core.Entities.ProductBrand", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Name")
                         .HasColumnType("TEXT");
 
-                    b.HasKey("ID");
+                    b.HasKey("Id");
 
                     b.ToTable("ProductBrands");
                 });
 
             modelBuilder.Entity("Core.Entities.ProductType", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Name")
                         .HasColumnType("TEXT");
 
-                    b.HasKey("ID");
+                    b.HasKey("Id");
 
                     b.ToTable("ProductTyes");
                 });
